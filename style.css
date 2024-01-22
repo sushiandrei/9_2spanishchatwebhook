@@ -15,15 +15,21 @@ body {
     max-width: 600px;
     width: 90%;
     padding: 20px;
-    background-color: #FFFFFF;
+    background-color: #e6e6e6;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.container:hover {
+    background-color: #E0E8EB;
 }
 
 h1 {
     font-size: 36px;
     color: #007BFF;
     margin-bottom: 20px;
+    transition: color 0.3s ease;
 }
 
 label {
@@ -39,6 +45,11 @@ input {
     margin-bottom: 10px;
     border: 1px solid #ced4da;
     border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #007BFF;
 }
 
 button {
@@ -49,16 +60,19 @@ button {
     color: #fff;
     border: none;
     border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 button:hover {
     background-color: #0056b3;
+    color: #fff;
 }
 
 #feedback-message {
     margin-top: 10px;
     color: #28a745;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 #loading-spinner {
