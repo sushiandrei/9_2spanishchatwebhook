@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #CAEFD1;
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,20 +11,24 @@ body {
 
 .container {
     text-align: center;
+    background-color: #CAEFD1;
 }
 
 label {
     font-size: 18px;
     margin-right: 10px;
+    background-color: #CAEFD1;
 }
 
 input {
     padding: 8px;
     font-size: 16px;
+    background-color: #FDE0D9;
 }
 
 button {
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
+    background-color: #CAF4F4;
 }
