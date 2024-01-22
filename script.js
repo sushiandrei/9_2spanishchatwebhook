@@ -1,14 +1,15 @@
-let webhookUrl; // Declare a variable to store the webhook URL
+const webhookInput = document.getElementById("webhook-url");
+let webhookUrl;
 
 function sendMessage() {
-    if (!webhookUrl) {
-        // If the webhook URL is not set, prompt the user to enter it
-        webhookUrl = prompt("Please enter your webhook URL:");
-        if (!webhookUrl) {
-            alert("Webhook URL is required. Please try again.");
-            return;
-        }
+    const enteredUrl = webhookInput.value.trim();
+
+    if (!enteredUrl) {
+        alert("Webhook URL is required. Please try again.");
+        return;
     }
+
+    webhookUrl = enteredUrl;
 
     const messageInput = document.getElementById("message");
     const appMessage = {"text": messageInput.value};
