@@ -34,6 +34,9 @@ function sendMessage() {
         .then(data => {
             console.log("Message sent successfully:", data);
             displayFeedback("Message sent successfully!", "success");
+
+            // Add the sent message to the history
+            addToMessageHistory(appMessage.text);
         })
         .catch(error => {
             console.error("Error sending message:", error.message);
@@ -45,6 +48,13 @@ function sendMessage() {
 
     // Clear input after sending
     messageInput.value = "";
+}
+
+function addToMessageHistory(message) {
+    const historyList = document.getElementById("history-list");
+    const listItem = document.createElement("li");
+    listItem.textContent = message;
+    historyList.appendChild(listItem);
 }
 
 function displayFeedback(message, type) {
