@@ -11,7 +11,7 @@ function sendMessage() {
     webhookUrl = enteredUrl;
 
     const messageInput = document.getElementById("message");
-    const appMessage = {"text": messageInput.value};
+    const appMessage = { "text": messageInput.value };
     const messageHeaders = {
         "Content-Type": "application/json; charset=UTF-8"
     };
@@ -23,23 +23,25 @@ function sendMessage() {
         headers: messageHeaders,
         body: JSON.stringify(appMessage)
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log("Message sent successfully:", data);
-        displayFeedback("Message sent successfully!", "success");
-    })
-    .catch(error => {
-        console.error("Error sending message:", error);
-        displayFeedback("Error sending message. Please try again.", "error");
-    })
-    .finally(() => {
-        hideLoadingSpinner();
-    });
+        .then(response => {
+            if (!response.ok) {
+                return response.json().then(errorData => {
+                    throw new Error(`HTTP error! Status: ${response.status}, Message: ${errorData.message}`);
+                });
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Message sent successfully:", data);
+            displayFeedback("Message sent successfully!", "success");
+        })
+        .catch(error => {
+            console.error("Error sending message:", error.message);
+            displayFeedback(`Error sending message: ${error.message}`, "error");
+        })
+        .finally(() => {
+            hideLoadingSpinner();
+        });
 
     // Clear input after sending
     messageInput.value = "";
