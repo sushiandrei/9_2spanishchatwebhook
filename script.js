@@ -60,3 +60,12 @@ function hideLoadingSpinner() {
     const loadingSpinner = document.getElementById("loading-spinner");
     loadingSpinner.style.display = "none";
 }
+
+function toggleDarkMode() {
+    // Toggle the dark mode class on the body
+    document.body.classList.toggle('dark-mode');
+
+    // Update the user's preference in localStorage
+    const updatedDarkModeStatus = document.body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', updatedDarkModeStatus.toString());
+}
