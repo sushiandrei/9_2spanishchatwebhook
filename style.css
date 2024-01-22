@@ -12,8 +12,8 @@ body {
 .container {
     text-align: center;
     margin-top: 20px;
-    max-width: 600px; /* Set a maximum width for the container */
-    width: 90%; /* Set a default width for larger screens */
+    max-width: 600px;
+    width: 90%;
 }
 
 h1 {
@@ -29,8 +29,8 @@ label {
 input {
     padding: 8px;
     font-size: 16px;
-    width: 100%; /* Make the input fields take up the full width */
-    box-sizing: border-box; /* Include padding and border in the total width */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 button {
@@ -47,9 +47,24 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* Media query for smaller screens */
-@media screen and (max-width: 600px) {
-    .container {
-        width: 100%; /* Full width for smaller screens */
-    }
+#feedback-message {
+    margin-top: 10px;
+    color: #28a745;
+    font-weight: bold;
+}
+
+#loading-spinner {
+    margin-top: 10px;
+    display: none;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
