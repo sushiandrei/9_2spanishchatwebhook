@@ -12,6 +12,8 @@ body {
 .container {
     text-align: center;
     margin-top: 20px;
+    max-width: 600px; /* Set a maximum width for the container */
+    width: 90%; /* Set a default width for larger screens */
 }
 
 h1 {
@@ -27,6 +29,8 @@ label {
 input {
     padding: 8px;
     font-size: 16px;
+    width: 100%; /* Make the input fields take up the full width */
+    box-sizing: border-box; /* Include padding and border in the total width */
 }
 
 button {
@@ -41,4 +45,11 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 100%; /* Full width for smaller screens */
+    }
 }
