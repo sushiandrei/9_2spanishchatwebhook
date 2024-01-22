@@ -1,13 +1,22 @@
+let webhookUrl; // Declare a variable to store the webhook URL
+
 function sendMessage() {
-    const url = "https://chat.googleapis.com/v1/spaces/AAAA-M9tWic/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=ogt9MD99FGOVi8eWM8hgs7aHD_HSoc2xlGoUgC-GX08";
+    if (!webhookUrl) {
+        // If the webhook URL is not set, prompt the user to enter it
+        webhookUrl = prompt("Please enter your webhook URL:");
+        if (!webhookUrl) {
+            alert("Webhook URL is required. Please try again.");
+            return;
+        }
+    }
+
     const messageInput = document.getElementById("message");
     const appMessage = {"text": messageInput.value};
-
     const messageHeaders = {
         "Content-Type": "application/json; charset=UTF-8"
     };
 
-    fetch(url, {
+    fetch(webhookUrl, {
         method: "POST",
         headers: messageHeaders,
         body: JSON.stringify(appMessage)
