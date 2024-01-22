@@ -81,3 +81,40 @@ function toggleDarkMode() {
     const updatedDarkModeStatus = document.body.classList.contains('dark-mode');
     localStorage.setItem('darkMode', updatedDarkModeStatus.toString());
 }
+
+function toggleFeedbackForm() {
+    const feedbackForm = document.getElementById("feedback-form");
+    const feedbackButton = document.getElementById("feedback-button");
+
+    if (feedbackForm.style.display === "none") {
+        // Show the feedback form
+        feedbackForm.style.display = "block";
+        feedbackButton.innerText = "Hide Feedback";
+    } else {
+        // Hide the feedback form
+        feedbackForm.style.display = "none";
+        feedbackButton.innerText = "Give Feedback";
+    }
+}
+
+function submitFeedback() {
+    const feedbackText = document.getElementById("feedback").value;
+
+    if (!feedbackText) {
+        alert("Please enter your feedback before submitting.");
+        return;
+    }
+
+    // You can send the feedback to your server or a third-party service here.
+    // For demonstration purposes, let's log it to the console.
+    console.log("User Feedback:", feedbackText);
+
+    // Optionally, you can provide a confirmation message to the user.
+    alert("Thank you for your feedback!");
+
+    // Hide the feedback form after submission
+    document.getElementById("feedback-form").style.display = "none";
+
+    // Clear the feedback textarea
+    document.getElementById("feedback").value = "";
+}
