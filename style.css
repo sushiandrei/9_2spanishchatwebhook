@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #CAEFD1;
     margin: 0;
     padding: 0;
@@ -11,24 +11,34 @@ body {
 
 .container {
     text-align: center;
-    background-color: #CAEFD1;
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    color: #007BFF;
 }
 
 label {
     font-size: 18px;
     margin-right: 10px;
-    background-color: #CAEFD1;
 }
 
 input {
     padding: 8px;
     font-size: 16px;
-    background-color: #FDE0D9;
 }
 
 button {
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #CAF4F4;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
 }
