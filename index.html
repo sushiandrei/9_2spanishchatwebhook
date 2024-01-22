@@ -1,17 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- This declares the document type and version of HTML being used. It's an essential declaration for all HTML documents. -->
+<html lang="en">  
+<!-- This opening tag signifies the beginning of the HTML document. The lang attribute specifies the language of the document, which is set to English (en). -->
+    
 <head>
+<!-- The <head> element contains meta-information about the HTML document, such as the character set, viewport settings, and links to external resources. -->
+    
     <meta charset="UTF-8">
+    <!-- This meta tag defines the character encoding for the document as UTF-8, which is a widely used character encoding that supports various languages. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- This meta tag sets the viewport settings for responsive web design. It ensures that the webpage adapts to the width of the device and sets the initial zoom level to 1.0. -->
     <link rel="stylesheet" href="styles.css">
+    <!-- This link tag includes an external stylesheet (styles.css) to apply styles to the HTML document. It establishes a connection between the HTML file and the CSS file. -->
     <title>Google Chat Webhook</title>
+    <!-- The <title> element sets the title of the HTML document, which is displayed in the browser's title bar or tab. -->
 </head>
 <body>
+<!-- The <body> element contains the content of the HTML document that is rendered on the web page. -->
     <div class="container">
+    <!-- This <div> element creates a container with the class name "container." It's a common practice to use containers for styling and layout purposes. -->
         <label for="message">Message:</label>
+        <!-- The <label> element provides a label for the input field with the id "message." The for attribute associates the label with the input field. -->
         <input type="text" id="message" placeholder="Enter your message...">
+        <!--This <input> element creates a text input field. The type attribute is set to "text," and the
+        id attribute is set to "message" for identification. The placeholder attribute provides a hint or example text for the user. -->
         <button onclick="sendMessage()">Send Message</button>
+        <!-- This <button> element creates a button with the text "Send Message."
+        The onclick attribute specifies a JavaScript function (sendMessage()) to be executed when the button is clicked. -->
     </div>
     <script src="script.js"></script>
+    <!-- This <script> tag includes an external JavaScript file (script.js).
+    It establishes a connection between the HTML file and the JavaScript file, allowing the browser to execute the JavaScript code. -->
 </body>
 </html>
