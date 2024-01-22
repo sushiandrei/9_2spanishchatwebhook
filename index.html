@@ -39,6 +39,15 @@
         <ul id="history-list"></ul>
     </div>
 
+    <div class="feedback-container">
+        <button id="feedback-button" onclick="toggleFeedbackForm()">Give Feedback</button>
+        <form id="feedback-form" style="display: none;">
+            <label for="feedback">Your Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="4" placeholder="Enter your feedback..."></textarea>
+            <button type="button" onclick="submitFeedback()">Submit Feedback</button>
+        </form>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
