@@ -128,3 +128,32 @@ button:hover {
 }
 
 /* Existing styles... */
+
+.feedback-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-align: right;
+}
+
+button#feedback-button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button#feedback-button:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+form#feedback-form {
+    display: none;
+    text-align: left;
+    margin-top: 10px;
+}
