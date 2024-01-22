@@ -95,3 +95,36 @@ button:hover {
     background-color: #1a1a1a;
     color: #ffffff;
 }
+
+/* Existing styles... */
+
+.message-history {
+    margin-top: 20px;
+    background-color: #e6e6e6;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.message-history h2 {
+    font-size: 24px;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+#history-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#history-list li {
+    border-bottom: 1px solid #dee2e6;
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+#history-list li:last-child {
+    border-bottom: none;
+}
+
+/* Existing styles... */
