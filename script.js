@@ -23,14 +23,19 @@ function sendMessage() {
         headers: messageHeaders,
         body: JSON.stringify(appMessage)
     })
-        .then(response => {
-            if (!response.ok) {
-                return response.json().then(errorData => {
-                    throw new Error(`HTTP error! Status: ${response.status}, Message: ${errorData.message}`);
-                });
-            }
+          .then(response => {
+          if (!response.ok) {
+            return response.json().then(errorData => {
+              throw new Error(`HTTP error! Status: ${response.status}, Message: ${errorData.message}`);
+            });
+          }
             return response.json();
         })
+        .catch(error => {
+          // Handle errors, and optionally notify the user
+          console.error('Error sending message:', error);
+          displayFeedback(`Error sending message: ${error.message}`, 'error');
+        });
         .then(data => {
             console.log("Message sent successfully:", data);
             displayFeedback("Message sent successfully!", "success");
@@ -117,4 +122,14 @@ function submitFeedback() {
 
     // Clear the feedback textarea
     document.getElementById("feedback").value = "";
+}
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+    .then(registration => {
+      console.log('Service Worker registered with scope:', registration.scope);
+    })
+    .catch(error => {
+      console.error('Service Worker registration failed:', error);
+    });
 }
