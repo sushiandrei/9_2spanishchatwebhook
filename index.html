@@ -19,11 +19,15 @@
 <!-- The <body> element contains the content of the HTML document that is rendered on the web page. -->
     <div class="container">
     <!-- This <div> element creates a container with the class name "container." It's a common practice to use containers for styling and layout purposes. -->
+        <label for="webhook-url">Webhook URL:</label>
+        <input type="text" id="webhook-url" placeholder="Enter your webhook URL...">
+        <br>
         <label for="message">Message:</label>
         <!-- The <label> element provides a label for the input field with the id "message." The for attribute associates the label with the input field. -->
         <input type="text" id="message" placeholder="Enter your message...">
         <!--This <input> element creates a text input field. The type attribute is set to "text," and the
         id attribute is set to "message" for identification. The placeholder attribute provides a hint or example text for the user. -->
+        <br>
         <button onclick="sendMessage()">Send Message</button>
         <!-- This <button> element creates a button with the text "Send Message."
         The onclick attribute specifies a JavaScript function (sendMessage()) to be executed when the button is clicked. -->
